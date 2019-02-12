@@ -20,7 +20,7 @@ posicao = 4 * (pixel.getPosX() + (pixel.getPosY()*512));
 	FBptr[posicao+3] = pixel.getA(); // componente A
 
 ```
-### Exemplo de funcionamento:
+###### Exemplo de funcionamento:
 Como entrada vamos passar um píxel simples, que está localizado na posição (50,50) e possui a cor vermelha.
 ```
 Vertice v(50,50,255,0,0,0);
