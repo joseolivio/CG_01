@@ -214,6 +214,13 @@ A interpolação linear das cores faz com que a rasterização de uma linha ela 
 
 
 ```
+Inicialmente utilizamos as variáveis dCor e incCor como sendo do tipo inteiro, e tivemos o problema que não havia a realização do degradê, como visto na imagem a seguir:
+
+IMAGEM DA INTERPOLAÇÃO COM AS VARIÁVEIS DO TIPO INTEIRO <--------------------------------------------------------
+
+Para consertar esse problema foi bem simples, apenas trocamos o tipo dessas variáveis para o tipo float, com isso obtivemos um degradê bem suavizado, conforme a imagem a seguir: 
+
+IMAGEM COM AS VARIÁVEIS DO TIPO FLOAT <--------------------------------------------------------
 
 ### DrawTriangle
 Esta função desenha as arestas de um triângulo, recebendo como parâmetro três vértices, essa função consiste em chamar a função DrawLine três vezes, assim formando o desenho do triângulo desejado.
