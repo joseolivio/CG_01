@@ -156,7 +156,8 @@ Exemplo da função DrawLine com os vértices nas seguintes coordenadas:
 	Vertice v2(400, 200, 0, 255, 0, 255);
 ```
 
-IMAGEM AQUI <--------------------------------------------------------
+![dx0](https://user-images.githubusercontent.com/31492509/52742037-9bbdbd00-2fb5-11e9-9c37-3587c833e1e7.jpeg)
+
 **Δy = 0**
 
 Como somente o eixo x vai variar, e já existe a condição para inverter os vértices no eixo x, essa condição específica foi bem simples de implementar.
@@ -172,7 +173,7 @@ Exemplo da função DrawLine com os vértices nas seguintes coordenadas:
 	Vertice v1(400, 100, 255, 0, 0, 255);
 	Vertice v2(400, 200, 0, 255, 0, 255);
 ```
-IMAGEM AQUI <--------------------------------------------------------
+![dy0](https://user-images.githubusercontent.com/31492509/52742040-9ceeea00-2fb5-11e9-9ff3-b17b27135d6c.jpeg)
 
 **Δy = Δx**
 
@@ -184,6 +185,14 @@ Quando ambos os deslocamentos em x e em y são iguais significa que o cresciment
 		aux.setPosY(aux.getPosY()+1);
 	}
 ``` 
+###### Exemplo de funcionamento:
+Exemplo da função DrawLine com os vértices nas seguintes coordenadas:
+```
+	Vertice v1(100, 300, 255, 0, 0, 255);
+	Vertice v2(200, 400, 0, 255, 0, 255);
+```
+![dx dy](https://user-images.githubusercontent.com/31492509/52742046-a11b0780-2fb5-11e9-8d8c-d13331a62ad8.jpeg)
+
 **Interpolação**
 
 A interpolação linear das cores faz com que a rasterização de uma linha ela comece com cor do pixel inicial, e termine com a cor do pixel final. Fazendo um degradê bem suavizado. Para realizar o degradê é necessário mudar o valor do pixel a ser pintado. Essa mudança é realizada através de um cálculo simples: Primeiramente pegamos o valor da diferença da cor do pixel final e do inicial (I). No segundo passo pegamos a diferença do ponto atual ao ponto inicial (II). O terceiro passo calculamos o valor a ser incrementado a cor, esse cálculo é feito através da divisão do resultado do passo I com comprimento da linha, esse comprimento pode ser dx ou dy (III). E o quarto e último passo, é feito o cálculo para saber qual a cor que será pintada no pixel atual (IV). Todos os quatro passos são feitos para as três cores (RED, GREEN, BLUE) e o alfa. 
@@ -217,14 +226,34 @@ A interpolação linear das cores faz com que a rasterização de uma linha ela 
 ```
 Inicialmente utilizamos as variáveis dCor e incCor como sendo do tipo **_int_**, e tivemos o problema que não havia a realização do degradê, como visto na imagem a seguir:
 
-IMAGEM DA INTERPOLAÇÃO COM AS VARIÁVEIS DO TIPO INTEIRO <--------------------------------------------------------
+![int](https://user-images.githubusercontent.com/31492509/52742165-e7706680-2fb5-11e9-9795-9ea6b91ac81e.jpeg)
+
 
 Para consertar esse problema foi bem simples, apenas trocamos o tipo dessas variáveis para o tipo **_float_**, com isso obtivemos um degradê bem suavizado, conforme a imagem a seguir: 
 
-IMAGEM COM AS VARIÁVEIS DO TIPO FLOAT <--------------------------------------------------------
+![float](https://user-images.githubusercontent.com/31492509/52742030-99f3f980-2fb5-11e9-8a84-f06665daaee5.jpeg)
 
 ### DrawTriangle
 Esta função desenha as arestas de um triângulo, recebendo como parâmetro três vértices, essa função consiste em chamar a função DrawLine três vezes, assim formando o desenho do triângulo desejado.
+
+```
+	void DrawTriangle(Vertice pixel1, Vertice pixel2, Vertice pixel3){
+		DrawLine(pixel1, pixel2);
+		DrawLine(pixel2, pixel3);
+		DrawLine(pixel1, pixel3);
+	}
+```
+###### Exemplo de funcionamento:
+Exemplo da função DrawTriangle com os vértices nas seguintes coordenadas:
+```
+	Vertice v1(IMAGE_WIDTH/2 -150, IMAGE_HEIGHT/2 + 150, 255, 0, 0, 255);
+	Vertice v2(IMAGE_WIDTH/2, IMAGE_HEIGHT/2 -150, 0, 255, 0, 255);
+	Vertice v3(IMAGE_WIDTH/2 +150, IMAGE_HEIGHT/2 + 150, 0, 0, 255, 255);
+```
+
+![triangulo](https://user-images.githubusercontent.com/31492509/52742056-a5dfbb80-2fb5-11e9-9b0b-76341f8141de.jpeg)
+
+
 
 
 
