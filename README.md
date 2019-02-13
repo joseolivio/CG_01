@@ -123,6 +123,14 @@ Para renderizar retas nestes octantes a abordagem foi semelhante ao 1° e 5° oc
 		aux.setPosY(aux.getPosY()-1);
 	}
 ```
+###### Exemplo de funcionamento:
+Exemplo da função DrawLine com os vértices nas seguintes coordenadas:
+```
+	Vertice v1(50, 200, 255, 0, 0, 255);
+	Vertice v2(400, 100, 0, 255, 0, 255);
+```
+
+![8oct](https://user-images.githubusercontent.com/31492509/52719948-6ef1b180-2f85-11e9-96d8-52577ddb29fd.jpeg)
 
 **Δx = 0**
 
