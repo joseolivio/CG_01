@@ -253,6 +253,18 @@ Exemplo da função DrawTriangle com os vértices nas seguintes coordenadas:
 
 ![triangulo](https://user-images.githubusercontent.com/31492509/52742056-a5dfbb80-2fb5-11e9-9b0b-76341f8141de.jpeg)
 
+### Considerações:
+Ficamos satisfeitos com o resultado final da atividade, foi muito interessante trabalhar com computação gráfica pois a saída pode ser facilmente observada e contemplada, e também entender um pouco de como nossas telas funcionam, como cada bit é colorido de modo a gerar uma cena maior.
+As maiores dificuldades foram em converter o algoritmo de Bresenham do primeiro octante para todos os outros, foi necessário uma pesquisa teórica antes de partir para programação.
+O código com certeza pode ser refinado, e também deixamos a desejar nos comentários, que são muito importantes.
+
+### Referências:
+Algumas fontes que nos auxiliaram durante o desenvolvimento do trabalho;
+https://www.ntu.edu.sg/home/ehchua/programming/opengl/cg_basicstheory.html
+https://johannesca.github.io/cg_t1/
+http://letslearnbits.blogspot.com/2014/10/icgt1-interpolacao-de-cores.html
+http://fleigfleig.blogspot.com/2016/08/interpolacao-de-cores-e-triangulos.html
+
 
 
 
