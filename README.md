@@ -77,6 +77,16 @@ Para conseguir rasterizar retas no segundo octante foi necessário inverter os e
 		aux.setPosX(aux.getPosX()+1);
 	}
 ```
+###### Exemplo de funcionamento:
+Exemplo da função DrawLine com os vértices nas seguintes coordenadas:
+```
+	Vertice v1(100, 50, 255, 0, 0, 255);
+	Vertice v2(200, 400, 0, 255, 0, 255);
+```
+
+![2oct](https://user-images.githubusercontent.com/31492509/52719463-749ac780-2f84-11e9-867e-a5e5b8277711.jpeg)
+
+
 **3° e 7° OCTANTE**
 
 Para renderizar retas nestes octantes a abordagem foi semelhante ao 2° e 7° octante, porém com algumas diferenças, uma delas foi que agora nós vamos decrementar a posição y no momento de construir a reta.
@@ -90,6 +100,16 @@ Para renderizar retas nestes octantes a abordagem foi semelhante ao 2° e 7° oc
 		aux.setPosY(aux.getPosY()-1);
 	}
 ```
+###### Exemplo de funcionamento:
+Exemplo da função DrawLine com os vértices nas seguintes coordenadas:
+```
+	Vertice v1(100, 400, 255, 0, 0, 255);
+	Vertice v2(200, 50, 0, 255, 0, 255);
+```
+
+![7oct](https://user-images.githubusercontent.com/31492509/52719472-7795b800-2f84-11e9-922c-a7e1a906f8e6.jpeg)
+
+
 **4° e 8° OCTANTE**
 
 Para renderizar retas nestes octantes a abordagem foi semelhante ao 1° e 5° octante, porém com algumas diferenças, uma delas foi que agora nós vamos decrementar a posição y no momento de construir a reta, pois a reta está crescendo em direção ao eixo y negativo.
