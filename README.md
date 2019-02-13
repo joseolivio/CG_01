@@ -50,6 +50,8 @@ Para rasterizar retas no quinto octante foi simples, apenas era necessário inve
 		cout << "INVERTIDO" << endl;
 	}
 ``` 
+**2° e 6° OCTANTE**
+Para conseguir rasterizar retas no segundo octante foi necessário inverter os eixos x e y no momento de rasterizar, pois, se observamos o eixo de coordenadas, a resta vai crescend
 
 
 
