@@ -148,6 +148,14 @@ Alguns outros casos que não foram considerados até agora devem ser tratados, c
 		}
 	}
 ```
+###### Exemplo de funcionamento:
+Exemplo da função DrawLine com os vértices nas seguintes coordenadas:
+```
+	Vertice v1(400, 100, 255, 0, 0, 255);
+	Vertice v2(400, 200, 0, 255, 0, 255);
+```
+
+IMAGEM AQUI <--------------------------------------------------------
 **Δy = 0**
 
 Como somente o eixo x vai variar, e já existe a condição para inverter os vértices no eixo x, essa condição específica foi bem simples de implementar.
@@ -157,6 +165,14 @@ Como somente o eixo x vai variar, e já existe a condição para inverter os vé
 		aux.setPosX(aux.getPosX()+1);
 	}
 ```
+###### Exemplo de funcionamento:
+Exemplo da função DrawLine com os vértices nas seguintes coordenadas:
+```
+	Vertice v1(400, 100, 255, 0, 0, 255);
+	Vertice v2(400, 200, 0, 255, 0, 255);
+```
+IMAGEM AQUI <--------------------------------------------------------
+
 **Δy = Δx**
 
 Quando ambos os deslocamentos em x e em y são iguais significa que o crescimento de ambos será semelhante, logo sempre vamos colorir o píxel na diagonal, ou seja, crescer em ambos os eixos.
@@ -167,6 +183,10 @@ Quando ambos os deslocamentos em x e em y são iguais significa que o cresciment
 		aux.setPosY(aux.getPosY()+1);
 	}
 ``` 
+**Interpolação**
+
+### DrawTriangle
+Esta função desenha as arestas de um triângulo, recebendo como parâmetro três vértices, essa função consiste em chamar a função DrawLine três vezes, assim formando o desenho do triângulo desejado.
 
 
 
