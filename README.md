@@ -42,7 +42,12 @@ O interessante deste algoritmo é que utiliza apenas adição, subtração de in
 
 **1° e 5° OCTANTE**
 
-Para rasterizar retas no quinto octante foi simples, apenas era necessário inverter qual seria o vértice inicial e o vértice final, para isso, foi criada uma condição que verifica em qual octante está a reta, e se necessário inverte os pixels.
+Para identificar as retas presentes nestes octantes utilizamos uma verificação baseada no eixo de coordenadas, as retas presentes no primeiro octante tinham um deslocamento x (Δx) maior que o deslocamento no eixo y (Δy), e o módulo do seu Δx é maior que o módulo do Δy.
+```
+	if(dx > 0 && dy > 0 && abs(dx) > abs(dy)){
+```
+
+Rasterizar as retas no quinto octante foi simples, partindo do algoritmo que renderiza no primeiro octante, apenas era necessário inverter qual seria o vértice inicial e o vértice final, para isso, foi criada uma condição que verifica se o Δx é negativo, e se necessário, inverte os pixels. 
 ```
 	if (pixel2.getPosX() < pixel1.getPosX())
 	{
@@ -51,7 +56,19 @@ Para rasterizar retas no quinto octante foi simples, apenas era necessário inve
 	}
 ``` 
 **2° e 6° OCTANTE**
-Para conseguir rasterizar retas no segundo octante foi necessário inverter os eixos x e y no momento de rasterizar, pois, se observamos o eixo de coordenadas, a resta vai crescend
+
+Para conseguir rasterizar retas no segundo octante foi necessário inverter os eixos x e y no momento de rasterizar, pois, se observamos o eixo de coordenadas, a reta vai crescendo mais paralela ao eixo y, então uma das mudanças foi incrementar a coordenada y, diferente do passo anterior, onde incrementamos a coordenada x. Para renderizar retas no 6° octante não foi necessário criar nenhuma condição especial, pois a condição de inversão já garante este caso também.
+```
+	if (d <= 0){
+		d += incr_e;
+		aux.setPosY(aux.getPosY()+1);
+	} else{
+		d += incr_ne;
+		aux.setPosY(aux.getPosY()+1);
+		aux.setPosX(aux.getPosX()+1);
+	}
+```
+**3° e 7° OCTANTE**
 
 
 
