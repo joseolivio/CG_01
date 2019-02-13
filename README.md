@@ -185,6 +185,36 @@ Quando ambos os deslocamentos em x e em y são iguais significa que o cresciment
 ``` 
 **Interpolação**
 
+A interpolação linear das cores faz com que a rasterização de uma linha ela comece com cor do pixel inicial, e termine com a cor do pixel final. Fazendo um degradê bem suavizado. Para realizar o degradê é necessário mudar o valor do pixel a ser pintado. Essa mudança é realizada através de um cálculo simples: Primeiramente pegamos o valor da diferença da cor do pixel final e do inicial (I). No segundo passo pegamos a diferença do ponto atual ao ponto inicial (II). O terceiro passo calculamos o valor a ser incrementado a cor, esse cálculo é feito através da divisão do resultado do passo I com comprimento da linha, esse comprimento pode ser dx ou dy (III). E o quarto e último passo, é feito o cálculo para saber qual a cor que será pintada no pixel atual (IV). Todos os quatro passos são feitos para as três cores (RED, GREEN, BLUE) e o alfa. 
+
+```
+	dCor[0] = pixel2.getR() - pixel1.getR();	//    
+	dCor[1] = pixel2.getG() - pixel1.getG();	//      (I)	
+	dCor[2] = pixel2.getB() - pixel1.getB();	//
+	dCor[3] = pixel2.getA() - pixel1.getA();	//
+
+	if(dx == 0 || (abs(dy) > abs(dx))){
+		variacao = aux.getPosY() - pixel1.getPosY();  // (II)
+		for (int i = 0; i < 4; i++)
+		{
+			incCor[i] = dCor[i]/dy;		//	(III)
+		}
+	} else if((abs(dx) == abs(dy) ) || (abs(dx) > abs(dy)) ){
+		variacao = aux.getPosX() - pixel1.getPosX();  // (II)
+		for (int i = 0; i < 4; i++)
+		{
+			incCor[i] = dCor[i]/dx;		//	(III)
+		}
+	}
+
+	inter.setR(pixel1.getR() + incCor[0]*variacao);	//
+	inter.setG(pixel1.getG() + incCor[1]*variacao);	//	(IV)
+	inter.setB(pixel1.getB() + incCor[2]*variacao);	//
+	inter.setA(pixel1.getA() + incCor[3]*variacao);	//
+
+
+```
+
 ### DrawTriangle
 Esta função desenha as arestas de um triângulo, recebendo como parâmetro três vértices, essa função consiste em chamar a função DrawLine três vezes, assim formando o desenho do triângulo desejado.
 
