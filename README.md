@@ -40,6 +40,21 @@ O interessante deste algoritmo é que utiliza apenas adição, subtração de in
 
 ![definitivo](https://user-images.githubusercontent.com/31492509/52677156-8429fa00-2f0b-11e9-88e5-f67ecd8e152a.png)
 
+**1° e 5° OCTANTE**
+
+Para rasterizar retas no quinto octante foi simples, apenas era necessário inverter qual seria o vértice inicial e o vértice final, para isso, foi criada uma condição que verifica em qual octante está a reta, e se necessário inverte os pixels.
+```
+	if (pixel2.getPosX() < pixel1.getPosX())
+	{
+		InverteVertice(pixel1, pixel2);
+		cout << "INVERTIDO" << endl;
+	}
+``` 
+
+
+
+
+
 
 
 
