@@ -78,9 +78,29 @@ Para conseguir rasterizar retas no segundo octante foi necessário inverter os e
 	}
 ```
 **3° e 7° OCTANTE**
-
-
-
+Para renderizar retas nestes octantes a abordagem foi semelhante ao 2° e 7° octante, porém com algumas diferenças, uma delas foi que agora nós vamos decrementar a posição y no momento de construir a reta.
+``` 
+	if (d <= 0){
+		d += incr_e;
+		aux.setPosY(aux.getPosY()-1);
+	} else{
+		d += incr_ne;
+		aux.setPosX(aux.getPosX()+1);
+		aux.setPosY(aux.getPosY()-1);
+	}
+```
+**4° e 8° OCTANTE**
+Para renderizar retas nestes octantes a abordagem foi semelhante ao 1° e 5° octante, porém com algumas diferenças, uma delas foi que agora nós vamos decrementar a posição y no momento de construir a reta, pois a reta está crescendo em direção ao eixo y negativo.
+```
+	if (d >= 0){
+		d += incr_e;
+		aux.setPosX(aux.getPosX()+1);
+	} else{
+		d += incr_ne;
+		aux.setPosX(aux.getPosX()+1);
+		aux.setPosY(aux.getPosY()-1);
+	}
+```
 
 
 
