@@ -32,4 +32,11 @@ Teremos a seguinte saída:
 
 ![solitario](https://user-images.githubusercontent.com/31492509/52673288-0829b500-2eff-11e9-902f-d85fd69ac857.png)
 
+### DrawLine
+
+Esta função rasteriza uma linha na tela, recebendo como parâmetros dois vértices (inicial e final), o algoritmo implementado para rasterização foi o de Bresenham, que permite determinar quais os pontos numa matriz de base quadriculada que devem ser destacados para atender o grau de inclinação de um ângulo. Também é feita uma interpolação linear entre os vértices, causando o efeito degradê.
+###### Algoritmo de Bresenham
+O interessante deste algoritmo é que utiliza apenas adição, subtração de inteiros e deslocamento de bits, operações muito simples e baratas em termos de processamento, o algoritmo determina os pontos que serão coloridos a fim de realizar uma aproximação de uma linha reta entre dois pontos. Partimos do algoritmo de Bresenham para o primeiro octante, e a partir daí modificamos o algoritmo para contemplar todos os casos.
+
+
 
