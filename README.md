@@ -78,6 +78,7 @@ Para conseguir rasterizar retas no segundo octante foi necessário inverter os e
 	}
 ```
 **3° e 7° OCTANTE**
+
 Para renderizar retas nestes octantes a abordagem foi semelhante ao 2° e 7° octante, porém com algumas diferenças, uma delas foi que agora nós vamos decrementar a posição y no momento de construir a reta.
 ``` 
 	if (d <= 0){
@@ -90,6 +91,7 @@ Para renderizar retas nestes octantes a abordagem foi semelhante ao 2° e 7° oc
 	}
 ```
 **4° e 8° OCTANTE**
+
 Para renderizar retas nestes octantes a abordagem foi semelhante ao 1° e 5° octante, porém com algumas diferenças, uma delas foi que agora nós vamos decrementar a posição y no momento de construir a reta, pois a reta está crescendo em direção ao eixo y negativo.
 ```
 	if (d >= 0){
@@ -101,6 +103,43 @@ Para renderizar retas nestes octantes a abordagem foi semelhante ao 1° e 5° oc
 		aux.setPosY(aux.getPosY()-1);
 	}
 ```
+
+**Δx = 0**
+
+Alguns outros casos que não foram considerados até agora devem ser tratados, como por exemplo quando o deslocamento no eixo x (Δx) for igual a zero, ou seja, a reta está fixa e vai variar apenas no eixo y, devemos verificar o deslocamento em y para ver em qual direção devemos rasterizar.
+```
+	if(dy > 0){
+		while(aux.getPosY() < pixel2.getPosY()){
+			Interpolacao(aux, pixel1, pixel2);
+			aux.setPosY(aux.getPosY()+1);
+		}	
+	} else if(dy < 0){
+		while(aux.getPosY() > pixel2.getPosY()){
+			Interpolacao(aux, pixel1, pixel2);
+			aux.setPosY(aux.getPosY()-1);
+		}
+	}
+```
+**Δy = 0**
+
+Como somente o eixo x vai variar, e já existe a condição para inverter os vértices no eixo x, essa condição específica foi bem simples de implementar.
+```
+	while(aux.getPosX() < pixel2.getPosX()){
+		Interpolacao(aux, pixel1, pixel2);
+		aux.setPosX(aux.getPosX()+1);
+	}
+```
+**Δy = Δx**
+
+Quando ambos os deslocamentos em x e em y são iguais significa que o crescimento de ambos será semelhante, logo sempre vamos colorir o píxel na diagonal, ou seja, crescer em ambos os eixos.
+```
+	while(aux.getPosX() < pixel2.getPosX()){
+		Interpolacao(aux, pixel1, pixel2);
+		aux.setPosX(aux.getPosX()+1);
+		aux.setPosY(aux.getPosY()+1);
+	}
+``` 
+
 
 
 
