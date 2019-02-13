@@ -62,6 +62,8 @@ Exemplo da função DrawLine com os vértices nas seguintes coordenadas:
 	Vertice v2(400, 200, 0, 255, 0, 255);
 ```
 
+![whatsapp image 2019-02-13 at 10 40 41](https://user-images.githubusercontent.com/31492509/52716645-ff2bf880-2f7d-11e9-9417-b899d5a266f3.jpeg)
+
 **2° e 6° OCTANTE**
 
 Para conseguir rasterizar retas no segundo octante foi necessário inverter os eixos x e y no momento de rasterizar, pois, se observamos o eixo de coordenadas, a reta vai crescendo mais paralela ao eixo y, então uma das mudanças foi incrementar a coordenada y, diferente do passo anterior, onde incrementamos a coordenada x. Para renderizar retas no 6° octante não foi necessário criar nenhuma condição especial, pois a condição de inversão já garante este caso também.
