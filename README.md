@@ -90,7 +90,7 @@ Exemplo da função DrawLine com os vértices nas seguintes coordenadas:
 
 **3° e 7° OCTANTE**
 
-Para renderizar retas nestes octantes a abordagem foi semelhante ao 2° e 7° octante, porém com algumas diferenças, uma delas foi que agora nós vamos decrementar a posição y no momento de construir a reta.
+Para renderizar retas nestes octantes a abordagem foi semelhante ao 2° e 6° octante, porém com algumas diferenças, uma delas foi que agora nós vamos decrementar a posição y no momento de construir a reta.
 ``` 
 	if (d <= 0){
 		d += incr_e;
