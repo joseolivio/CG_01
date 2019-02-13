@@ -21,6 +21,7 @@ posicao = 4 * (pixel.getPosX() + (pixel.getPosY()*512));
 
 ```
 ###### Exemplo de funcionamento:
+A saída é apresentada em uma tela que possui dimensão 512x512, ou seja, ao todo são 262144 pixels.
 Como entrada vamos passar um píxel simples, que está localizado na posição (50,50) e possui a cor vermelha.
 ```
 Vertice v(50,50,255,0,0,0);
