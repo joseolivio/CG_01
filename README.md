@@ -261,6 +261,7 @@ O código com certeza pode ser refinado, e também deixamos a desejar nos coment
 ### Referências:
 Algumas fontes que nos auxiliaram durante o desenvolvimento do trabalho;
 https://www.ntu.edu.sg/home/ehchua/programming/opengl/cg_basicstheory.html
+
 https://johannesca.github.io/cg_t1/
 http://letslearnbits.blogspot.com/2014/10/icgt1-interpolacao-de-cores.html
 http://fleigfleig.blogspot.com/2016/08/interpolacao-de-cores-e-triangulos.html
